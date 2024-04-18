@@ -56,7 +56,7 @@ jobs:
           echo $ANDROID_HOME
           ls $ANDROID_HOME/ndk
           cd box
-#          go run ./cmd/internal/build_libbox -target=android
+          go run ./cmd/internal/build_libbox -target=android
           ls
           echo $PWD
 
