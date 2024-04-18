@@ -14,7 +14,7 @@ on:
 
 jobs:
   release:
-    runs-on: macOS-12
+    runs-on: ubuntu-latest
     steps:
 
       - uses: actions/checkout@v3
@@ -36,6 +36,7 @@ jobs:
 
       - name: Build xcframework
         run: |
+          echo $ANDROID_HOME
           cd box
           go run ./cmd/internal/build_libbox -target=android
           ls
