@@ -17,11 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v3 # Checkout your code (adjust version if needed)
-      - uses: actions/setup-java@v3 # Use the setup-java action
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
         with:
           java-version: 17
-          distribution: 'temurin'  # Or 'adopt' for Eclipse Adoptium (if preferred)
+          distribution: 'temurin'
 
       - uses: actions/checkout@v3
       - uses: actions/checkout@v3
@@ -44,7 +44,6 @@ jobs:
           mv request.txt /opt/hostedtoolcache/go/1.22.2/x64/src/net/http/request.go
           cat /opt/hostedtoolcache/go/1.22.2/x64/src/net/http/request.go
           
-          
 
       - name: Setup Gomobile
         run: |
@@ -57,8 +56,9 @@ jobs:
           echo $ANDROID_HOME
           ls $ANDROID_HOME/ndk
           cd box
-          go run ./cmd/internal/build_libbox -target=android
+#          go run ./cmd/internal/build_libbox -target=android
           ls
+          echo $PWD
 
 
       - name: Upload binaries to release
