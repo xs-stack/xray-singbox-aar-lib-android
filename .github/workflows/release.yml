@@ -65,6 +65,6 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: libbox.aar
+          file: /home/runner/work/xray-singbox-aar-lib-android/xray-singbox-aar-lib-android/box/libbox.aar
           tag: ${{ github.ref }}
           file_glob: true
