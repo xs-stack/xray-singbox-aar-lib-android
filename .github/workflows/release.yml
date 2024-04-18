@@ -37,7 +37,7 @@ jobs:
       - name: Build xcframework
         run: |
           echo $ANDROID_HOME
-          echo $ANDROID_HOME/ndk
+          ls $ANDROID_HOME/ndk
           cd box
           go run ./cmd/internal/build_libbox -target=android
           ls
